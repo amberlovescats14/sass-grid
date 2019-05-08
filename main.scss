@@ -1,0 +1,150 @@
+// @import 'partials/variables';
+// @import 'partials/mixins';
+// @import 'partials/functions';
+////////
+$grid-columns: 12;
+$grid-width: 100%;
+$grid-gutter: 0%;
+$grid-row: 12;
+$grid-height: 100%;
+@function column-width($cols) {
+  @return ($grid-width
+           - $grid-gutter * ($grid-columns))
+          / $grid-columns * $cols
+          + $grid-gutter * ($cols);
+}
+@function row-height($rows) {
+  @return ($grid-height
+           - $grid-gutter * ($grid-row - 1))
+          / $grid-row * $rows
+          + $grid-gutter * ($rows - 1);
+}
+////////////////////
+
+…
+*{
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#root {
+  @include wh();
+}
+#main  {
+background: grey;
+@include wh();
+border: $border;
+// width: column-width(12); 
+// height: row-height(12);
+display: inline-block;
+#main > div {
+  float: left;
+}
+}
+#one { 
+  width: column-width(12); 
+  height: row-height(1);
+  background: red;
+  border: $border;
+
+}
+#two { 
+  width: column-width(3); 
+  height: row-height(4);
+  background: red;
+  // border: $border;
+  display: inline-block;
+
+}
+#three { 
+  width: column-width(6); 
+  height: row-height(11);
+  background: red;
+  // border: $border;
+  display: inline-block;
+
+}
+ #four {
+   display: inline-block;
+   width: column-width(3);
+   height: row-height(4);
+   background: red;
+  //  border: $border;
+ }
+ #five {
+  display: inline-block;
+  width: column-width(3);
+  height: row-height(4);
+  background: red;
+ //  border: $border;
+}
+#six {
+  display: inline-block;
+  width: column-width(3);
+  height: row-height(4);
+  background: red;
+ //  border: $border;
+}
+// #one {
+//   display: grid;
+//   grid-area: one;
+//   grid-row: 1;
+//   grid-column: 1/ -12;
+//   background: $main-color;
+//   border: $border;
+
+// }
+// #two {
+//   display: grid;
+//   grid-area: two;
+//   grid-row: 2 / 6;
+//   grid-column: 1 / 4;
+//   background: $main-color;
+//   border: $border;
+
+// }
+// #three {
+//   display: grid;
+//   grid-area: three;
+//   grid-row: 6 / -1;
+//   grid-column: 1 / 4;
+//   background: $main-color;
+//   border: $border;
+
+// }
+// #four {
+//   display: grid;
+//   grid-area: four;
+//   grid-row: 2 ;
+//   grid-column: 4 / 10;
+//   background: $main-color;
+//   border: $border;
+
+// }
+// #five {
+//   display: grid;
+//   grid-area: five;
+//   grid-row: 3/ -1 ;
+//   grid-column: 4 / 10;
+//   background: $main-color;
+//   border: $border;
+
+// }
+// #six {
+//   display: grid;
+//   grid-area: six;
+//   grid-row: 2 / 7;
+//   grid-column: 10 / -1;
+//   background: $main-color;
+//   border: $border;
+
+// }
+// #seven {
+//   display: grid;
+//   grid-area: seven;
+//   grid-row: 7 / -1;
+//   grid-column: 10 / -1;
+//   background: $main-color;
+//   border: $border;
+
+// }
